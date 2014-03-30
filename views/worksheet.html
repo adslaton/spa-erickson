@@ -1,0 +1,23 @@
+<div class="worksheet">
+	<div class="title" data-ng-model="title">
+		<h2>{{ title }}</h2>
+	</div>
+	<ul class="tabs">
+		<li><a href="#property-schedule">Property Schedule</a></li>
+		<li><a href="#auto-vehicle-schedule">Auto Vehicle Schedule</a></li>
+		<li><a href="#aircraft-schedule">Aircraft Schedule</a></li>
+		<li><a href="#work-comp">Work Comp</a></li>
+		<li><a href="#environmental-storage-tanks">Environmental - Storage Tanks</a></li>
+	</ul>
+	<ul class="categories">
+		<li data-ng-repeat="category in categories">
+			<h4>{{ category.name }}</h4>
+			<ul>
+				<li data-ng-repeat="field in category.fields">
+					<div>{{ field }}</div>
+					<input type="text"/>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
