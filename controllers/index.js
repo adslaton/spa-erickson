@@ -14,7 +14,7 @@ controllers = {
 				name: 'Location Information',
 				fields: [
 					'Location #',
-					'Buidling #',
+					'Building #',
 					'Street Address',
 					'City',
 					'State',
