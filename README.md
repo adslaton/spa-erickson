@@ -1,4 +1,4 @@
 spa-erickson
 ============
 
-A single page application
+A single page application (client side MVC)
