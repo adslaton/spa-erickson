@@ -1,12 +1,77 @@
 <html>
     <head>
-        <script src="src/js/vendor/angular.min.js"></script>
-        <script src="src/js/vendor/angular-routes.min.js"></script>
-        <script src="src/js/vendor/ng-table.min.js"></script>
-        <script src="controllers/index.js"></script>
-        <script src="routes/index.js"></script>
+        <link rel="stylesheet" href="src/css/vendor/dist/jquery.handsontable.full.css">
+        <script src="src/js/vendor/jquery-2.1.0.min.js"></script>
+        <script src="src/js/vendor/dist/jquery.handsontable.full.js"></script>
     </head>
-    <body data-ng-app="worksheet">
-        <div data-ng-view=""></div>
+    <body>
+        <ul class="tabs" id="js-tabs">
+            <li id="js-property"><a href="#property">Property Schedule</a></li>
+            <li id="js-auto-vehicle"><a href="#auto-vehicle">Auto Vehicle Schedule</a></li>
+            <li id="js-aircraft"><a href="#aircraft">Aircraft Schedule</a></li>
+            <li id="js-work-comp"><a href="#work-comp">Work Comp</a></li>
+            <li id="js-environmental"><a href="#storage-tanks">Environmental - Storage Tanks</a></li>
+        </ul>
+        <div id="tab-content">
+            <ul class="tab" id="js-property-tab">
+                <li>
+                    <h2>Location Information</h2>
+                    <div id="location"></div>
+                </li>
+                <li>
+                    <h2>Use and Construction</h2>
+                    <div id="construction"></div>
+                </li>
+                <li>
+                    <h2>Values (at Replacement Cost New)</h2>
+                    <div id="replacement"></div>
+                </li>
+                <li>
+                    <h2>Natural Catastrophy Exposures</h2>
+                    <div id="catastrophy"></div>
+                </li>
+            </ul>
+            <ul class="tab" id="js-auto-vehicle-tab">
+                <li>
+                    <h2>Auto Vehicle</h2>
+                    <div id="auto"></div>
+                </li>
+            </ul>
+            <ul class="tab" id="js-aircraft-tab">
+                <li>
+                    <h2>Aircraft</h2>
+                    <div id="aircraft"></div>
+                </li>
+            </ul>
+            <ul class="tab" id="js-work-comp-tab">
+                <li>
+                    <h2>Location Information</h2>
+                    <div id="workcompLocation"></div>
+                </li>
+                <li>
+                    <h2>Payroll Information</h2>
+                    <div id="workcompPayroll"></div>
+                </li>
+            </ul>
+            <ul class="tab" id="js-environmental-tab">
+                <li>
+                    <h2>Location Information</h2>
+                    <div id="envLocation"></div>
+                </li>
+                <li>
+                    <h2>In Door</h2>
+                    <div id="envInDoor"></div>
+                </li>
+                <li>
+                    <h2>Out Door - Above Ground</h2>
+                    <div id="envOutDoor"></div>
+                </li>
+                <li>
+                    <h2>Out Door - Underground</h2>
+                    <div id="envOutDoorAbove"></div>
+                </li>
+            </ul>
+        </div>
+        <script src="src/js/global.js"></script>
     </body>
 </html>
