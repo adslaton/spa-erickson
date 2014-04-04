@@ -1,4 +1,6 @@
 spa-erickson
 ============
 
-A single page application (client side MVC)
+A single page application
+
+Driven by http://handsontable.com/demo/search.html
