@@ -3,4 +3,4 @@ spa-erickson
 
 A single page application
 
-Driven by http://handsontable.com/demo/search.html
+Driven by http://handsontable.com
