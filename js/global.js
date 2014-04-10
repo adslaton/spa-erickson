@@ -6,48 +6,60 @@
     var view = w.location.hash.replace('#', ''),
         tabs = $('#js-tabs > li'),
         content = $j('#js-' + view + '-tab'),
-        location = [
+        location,
+        locationData = [
             ['', '', '', '', '', '', '', '', '']
         ],
-        construction = [
+        construction,
+        constructionData = [
             ['', '', '', '', '', '']
         ],
-        replacement = [
+        replacement,
+        replacementData = [
             ['', '', '', '', '']
         ],
-        catastrophy = [
+        catastrophy,
+        catastrophyData = [
             ['', '', '']
         ],
-        auto = [
+        auto,
+        autoData = [
             ['', '', '', '', '', '', '', '', '']
         ],
-        aircraft = [
+        aircraft,
+        aircraftData = [
             ['', '', '', '', '', '', '', '', '', '']
         ],
-        workcompLocation = [
+        workcompLocation,
+        workcompLocationData = [
             ['', '', '', '', '', '']
         ],
-        workcompPayroll = [
+        workcompPayroll,
+        workcompPayrollData = [
             ['', '', '', '', '', '', '']
         ],
-        envLocation = [
+        envLocation,
+        envLocationData = [
             ['', '', '', '', '', '']
         ],
-        envInDoor = [
+        envInDoor
+        envInDoorData = [
             ['', '']
         ],
-        envOutDoor = [
+        envOutDoor,
+        envOutDoorData = [
             ['', '', '']
         ],
-        envOutDoorAbove = [
+        envOutDoorAbove,
+        envOutDoorAboveData = [
             ['', '', '']
         ];
 
     content.siblings().hide();
     content.show();
 
-    $j(document.getElementById('location')).handsontable({
-        data: location,
+    location = $j(document.getElementById('location')).handsontable({
+        data: locationData,
         minSpareRows: 1,
         colHeaders: [
             'Location #',
@@ -65,8 +77,8 @@
         search: true
     });
 
-    $j(document.getElementById('construction')).handsontable({
-        data: construction,
+    construction = $j(document.getElementById('construction')).handsontable({
+        data: constructionData,
         minSpareRows: 1,
         colHeaders: [
             'Occupancy',
@@ -82,8 +94,8 @@
         search: true
     });
 
-    $j(document.getElementById('replacement')).handsontable({
-        data: replacement,
+    replacement = $j(document.getElementById('replacement')).handsontable({
+        data: replacementData,
         minSpareRows: 1,
         colHeaders: [
             'Building',
@@ -97,8 +109,8 @@
         search: true
     });
 
-    $j(document.getElementById('catastrophy')).handsontable({
-        data: catastrophy,
+    catastrophy = $j(document.getElementById('catastrophy')).handsontable({
+        data: catastrophyData,
         minSpareRows: 1,
         colHeaders: [
             'Flood',
@@ -110,8 +122,8 @@
         search: true
     });
 
-    $j(document.getElementById('auto')).handsontable({
-        data: auto,
+    auto = $j(document.getElementById('auto')).handsontable({
+        data: autoData,
         minSpareRows: 1,
         colHeaders: [
             'Assigned #',
@@ -129,8 +141,8 @@
         search: true
     });
 
-    $j(document.getElementById('aircraft')).handsontable({
-        data: aircraft,
+    aircraft = $j(document.getElementById('aircraft-vehicle')).handsontable({
+        data: aircraftData,
         minSpareRows: 1,
         colHeaders: [
             'Item No.',
@@ -149,8 +161,8 @@
         search: true
     });
 
-    $j(document.getElementById('workcompLocation')).handsontable({
-        data: workcompLocation,
+    workcompLocation = $j(document.getElementById('workcompLocation')).handsontable({
+        data: workcompLocationData,
         minSpareRows: 1,
         colHeaders: [
             'Location #',
@@ -165,8 +177,8 @@
         search: true
     });
 
-    $j(document.getElementById('workcompPayroll')).handsontable({
-        data: workcompPayroll,
+    workcompPayroll = $j(document.getElementById('workcompPayroll')).handsontable({
+        data: workcompPayrollData,
         minSpareRows: 1,
         colHeaders: [
             'Admin Staff - 8810',
@@ -182,8 +194,8 @@
         search: true
     });
 
-    $j(document.getElementById('envLocation')).handsontable({
-        data: envLocation,
+    envLocation = $j(document.getElementById('envLocation')).handsontable({
+        data: envLocationData,
         minSpareRows: 1,
         colHeaders: [
             'Location #',
@@ -198,8 +210,8 @@
         search: true
     });
 
-    $j(document.getElementById('envInDoor')).handsontable({
-        data: envInDoor,
+    envInDoor = $j(document.getElementById('envInDoor')).handsontable({
+        data: envInDoorData,
         minSpareRows: 1,
         colHeaders: [
             'Tank Construction',
@@ -210,8 +222,8 @@
         search: true
     });
 
-    $j(document.getElementById('envOutDoor')).handsontable({
-        data: envOutDoor,
+    envOutDoor = $j(document.getElementById('envOutDoor')).handsontable({
+        data: envOutDoorData,
         minSpareRows: 1,
         colHeaders: [
             'Capacity',
@@ -223,8 +235,8 @@
         search: true
     });
 
-    $j(document.getElementById('envOutDoorAbove')).handsontable({
-        data: envOutDoorAbove,
+    envOutDoorAbove = $j(document.getElementById('envOutDoorAbove')).handsontable({
+        data: envOutDoorAboveData,
         minSpareRows: 1,
         colHeaders: [
             'Capacity',
@@ -237,17 +249,26 @@
     });
 
     tabs.on('click', function() {
-
-        var tab = $j('#js-' + this.id);
+        var tab = $j('#' + this.id);
 
         content = $j('#' + this.id + '-tab');
 
         tab.siblings().removeClass('active');
-        tab.addClass('active')
+        tab.addClass('active');
 
         content.siblings().hide();
         content.show();
 
     });
+
+    function initTabs () {
+        var id = '#js-' + view,
+            tab = $j(id);
+            
+        tab.siblings().removeClass('active');
+        tab.addClass('active');
+    }
+
+    initTabs();
 
 })(window, jQuery);
